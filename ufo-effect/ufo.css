@@ -1,0 +1,87 @@
+html {
+	height: 100%;
+}
+body{
+	background-color: #FFE8D4;
+	height: 100%;
+}
+
+.moon{
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;/*居中*/
+	background-color: #e5a4cb;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+
+}
+
+/*动画*/
+@-webkit-keyframes orbit{
+    from{
+    	/*rotate()方法，2D在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转。*/
+        /*rotateX()方法，3D围绕其在一个给定度数X轴旋转的元素。*/
+        /*rotateY()方法，3D围绕其在一个给定度数Y轴旋转的元素。*/
+        -webkit-transform: rotateX(0) rotateY(359deg);
+    }
+    to{
+        -webkit-transform: rotateX(359deg) rotateY(-359deg);
+    }
+}
+@keyframes orbit{
+	from{
+    	
+       transform: rotateX(0) rotateY(359deg);
+    }
+    to{
+        transform: rotateX(359deg) rotateY(-359deg);
+    }
+}
+
+/*飞碟*/
+.moon:before,.moon:after{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	/*设置旋转元素的基点位置*/
+	-webkit-transform-origin: center center -133.33333px;
+	transform-origin: center center -133.33333px;
+	/*linear:从开始到结束以相同的速度播放动画*/
+	/*infinite:动画无限循环*/
+	-webkit-animation: orbit 3s linear infinite;
+	animation: orbit 3s linear infinite;
+	/*背面不可见*/
+	-webkit-backface-visibility: hidden;	
+	backface-visibility: hidden;
+
+	z-index: 1;
+	content: '';
+	width: 40px;
+	height: 40px;
+	background-color: #bbb;
+	border-radius: 50px;
+}
+
+/*飞碟阴影*/
+.moon:before{
+	-webkit-transform-origin:center center -100px;
+	transform-origin: center center -100px;
+	width: 30px;
+	height: 30px;
+	background-color: #555;
+	opacity: 0.5;
+}
+.moon.behind:after{
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+}
+
