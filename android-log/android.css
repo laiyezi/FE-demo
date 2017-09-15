@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div div{
+	background: #A4CA39;
+	position: relative;
+}
+
+.android{
+	height: 404px;
+	width: 334px;
+	margin: 100px auto;
+}
+
+.head{
+	width: 220px;
+	height: 100px;
+	
+	-webkit-border-radius: 110px 110px 0 0;
+	-moz-border-radius: 110px 110px 0 0;
+	border-radius: 110px 110px 0 0;
+    
+    transition: all 1s ease-in;
+}
+
+
+.l_eye,.r_eye{
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	position: absolute;
+	top: 42px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+}
+.l_eye{
+	left: 50px;
+}
+.r_eye{
+	right: 50px;
+}
+
+
+.l_ant,.r_ant{
+	width: 6px;
+	height: 50px;
+	position: absolute;
+	top: -34px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+.l_ant{
+	left: 50px;
+	-webkit-transform: rotate(-30deg);
+	-moz-transform: rotate(-30deg);
+	transform: rotate(-30deg);
+
+}
+.r_ant{
+	right: 50px;
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+.body{
+	width: 220px;
+	height: 184px;
+	top: 5px;
+	border-radius: 0 0 25px 25px;
+}
+
+
+.l_arm,.r_arm{
+	width: 50px;
+	height: 150px;	
+	position: absolute;
+
+	border-radius: 25px;
+	transition: all 1s ease-in;
+
+}
+.l_leg,.r_leg{
+	width: 50px;
+	height: 80px;	
+
+	position: absolute;
+	top: 182px;
+
+	border-radius: 0 0 25px 25px;
+}
+.l_arm{
+	left: -58px;
+}
+.r_arm{
+	right: -58px;
+
+}
+.l_leg{
+	left: 45px;
+}
+.r_leg{
+	right: 45px;
+}
+
+.head:hover{
+	transform: rotate(-5deg) translate(-4px, -8px);
+}
+.l_arm:hover{
+	transform: rotate(15deg) translate(-14px, 0);
+}
+.r_arm:hover{
+	transform: rotate(-15deg) translate(14px, 0);
+}
